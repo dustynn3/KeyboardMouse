@@ -8,31 +8,31 @@ def on_press(key):
     if key == keyboard.Key.ctrl_l:
         mouse.press(Button.left)  
         try:
-            print("alphanumeric key {0} pressed".format(key.char))
+            print("Alphanumeric key {0} pressed".format(key.char))
         except AttributeError:
             print("Special key {0} pressed".format(key))
 
     if key == keyboard.Key.alt_l:
         mouse.press(Button.right)  
         try:
-            print("alphanumeric key {0} pressed".format(key.char))
+            print("Alphanumeric key {0} pressed".format(key.char))
         except AttributeError:
             print("Special key {0} pressed".format(key))
 
     if key == keyboard.Key.up:
-        mouse.move(0,-30)
+        mouse.move(0,-15)
         print(mouse.position)
     
     if key == keyboard.Key.down:
-        mouse.move(0,30)
+        mouse.move(0,15)
         print(mouse.position)
     
     if key == keyboard.Key.right:
-        mouse.move(30,0)
+        mouse.move(15,0)
         print(mouse.position)
 
     if key == keyboard.Key.left:
-        mouse.move(-30,0)
+        mouse.move(-15,0)
         print(mouse.position)
 
 def on_release(key):
@@ -47,7 +47,7 @@ def on_release(key):
         # Stop listener
         return False
 
-# Collect events until released
+# Listen for keyboard events until released
 with keyboard.Listener(
         on_press=on_press,
         on_release=on_release) as listener:
